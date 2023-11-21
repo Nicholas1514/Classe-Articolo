@@ -47,17 +47,38 @@ namespace Classe_Articolo
 			Descrizione = descrizione;
 			Prezzo = prezzo;
 			Fedelta = fedelta;
-			Codice = codice;
-			Descrizione = descrizione;
-			Prezzo = prezzo;
-			Fedelta = fedelta;
+		}
+
+		public Articolo(Articolo articolovecchio)
+		{
+			Codice = articolovecchio.Codice;
+			Descrizione = articolovecchio.Descrizione;
+			Prezzo = articolovecchio.Prezzo;
+			Fedelta = articolovecchio.Fedelta;
+
+		}
+
+		
+
+		public override bool Equals(object obj)
+		{
+			if(obj == null || GetType() != obj.GetType())
+			{
+				return false;
+			}
+			Articolo altro = (Articolo)obj;
+			if(Codice == altro.Codice && Descrizione == altro.Descrizione && Prezzo == altro.Prezzo && Fedelta == altro.Fedelta)
+			{
+				return true;
+			}
+			return false;
 		}
 
 		public virtual double Sconta()
 		{
-			if(Fedelta == true)
+			if(Fedelta)
 			{
-				Prezzo = (Prezzo / 100) * 5;
+				Prezzo = Prezzo - Prezzo * (5 / 100);
 			}
 			return Prezzo;
 		}
