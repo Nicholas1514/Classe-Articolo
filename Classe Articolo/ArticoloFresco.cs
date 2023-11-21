@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Classe_Articolo
 {
-	internal class Class1
+	internal class ArticoloFresco : ArticoloAlimentare
 	{
+
 	}
 }
