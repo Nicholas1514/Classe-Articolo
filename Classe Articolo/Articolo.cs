@@ -58,7 +58,11 @@ namespace Classe_Articolo
 
 		}
 
-		
+		public override string ToString()
+		{
+			string a = Fedelta ? "Abbonato" : "Non abbonato";
+			return $"Codice:{Codice}; Descrizione:{Descrizione}; Prezzo:{Prezzo}; Fedelta:{a};";
+		}
 
 		public override bool Equals(object obj)
 		{
