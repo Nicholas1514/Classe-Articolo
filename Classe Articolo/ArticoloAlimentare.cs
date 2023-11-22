@@ -17,7 +17,7 @@ namespace Classe_Articolo
 			get { return _anno; }
 		}
 
-		public ArticoloAlimentare():base()
+		public ArticoloAlimentare() :base()
 		{
 			Anno = 0;
 		}
