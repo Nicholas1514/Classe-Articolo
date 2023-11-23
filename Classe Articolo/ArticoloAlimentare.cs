@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Classe_Articolo
 {
-	internal class ArticoloAlimentare : Articolo
+	public class ArticoloAlimentare : Articolo
 	{
 		private int _anno;
 		public int Anno

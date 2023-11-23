@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Classe_Articolo
 {
-	internal class ArticoloFresco : ArticoloAlimentare
+	public class ArticoloFresco : ArticoloAlimentare
 	{
 		private int _consumazione;
 
@@ -17,7 +18,7 @@ namespace Classe_Articolo
 
 		}
 
-		public ArticoloFresco(): base()
+		public ArticoloFresco() : base()
 		{
 			Consumazione = 0;
 		}
@@ -27,17 +28,43 @@ namespace Classe_Articolo
 			Consumazione = Consumazione;
 		}
 
-		public ArticoloFresco(ArticoloFresco vartf, ArticoloAlimentare varta, Articolo vart): base(varta, vart)
+		public ArticoloFresco(ArticoloFresco vartf, ArticoloAlimentare varta, Articolo vart) : base(varta, vart)
 		{
 			Consumazione = vartf.Consumazione;
 		}
 
-        public override string ToString()
-        {
+		public override string ToString()
+		{
 			return $"{base.ToString()}Da consumare entro: {Consumazione}";
-        }
+		}
+
+		public override bool Equals(object obj)
+		{
+			if(obj == null || GetType() != obj.GetType())
+			{
+				return false;
+			}
+			ArticoloFresco altro = (ArticoloFresco)obj;
+			if(base.Equals(altro) && Consumazione == altro.Consumazione)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		public override double Sconta()
+		{
+			double x = base.Sconta();
+			double psconto = 10F;
+			for(int i = 1; i < 6 && i < Consumazione; i++)
+			{
+				psconto -= 2F;
+			}
+			return x - x * psconto / 100;
+
+		}
 
 
 
-    }
+	}
 }

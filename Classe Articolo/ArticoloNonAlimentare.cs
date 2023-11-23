@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classe_Articolo
 {
-	internal class ArticoloNonAlimentare : Articolo
+	public class ArticoloNonAlimentare : Articolo
 	{
 		//• per gli articoli non alimentari, lo sconto aggiuntivo è del 10% se il materiale è riciclabile. 
 	

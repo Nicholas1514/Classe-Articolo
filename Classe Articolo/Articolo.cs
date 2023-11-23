@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classe_Articolo
 {
-	internal class Articolo
+	public class Articolo
 	{
 		protected int _codice;
 		protected string _descrizione;
