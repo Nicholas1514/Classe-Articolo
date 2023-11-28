@@ -44,10 +44,9 @@ namespace Classe_Articolo
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			for (int i = 0; i < conta; i++)
-			{
+			  art[conta - 1].Sconta();
 				listView1.Items.Add(art[conta - 1].ToString());
-			}
+				
 		}
 	}
 }

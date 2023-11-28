@@ -54,11 +54,11 @@ namespace Classe_Articolo
 		{
 			if(Fedelta && Ric)
 			{
-				return Prezzo - base.Sconta() * (10 / 100);
+				return Prezzo - base.Sconta() * 10 / 100;
 			}
 			if(Ric && Fedelta == false)
 			{
-				Prezzo = Prezzo - Prezzo * (10 / 100);
+				Prezzo = Prezzo - Prezzo * 10 / 100;
 			}
 			if(Fedelta)
 			{
@@ -67,6 +67,10 @@ namespace Classe_Articolo
 			return Prezzo;
 		
 			
+		}
+		public override int Compare(Articolo other, Articolo altro)
+		{
+			return base.Compare(other, altro);
 		}
 	}
 }

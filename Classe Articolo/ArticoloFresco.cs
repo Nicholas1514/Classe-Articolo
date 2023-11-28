@@ -25,7 +25,7 @@ namespace Classe_Articolo
 
 		public ArticoloFresco(int consumazione, int anno, int codice, string descrizione, double prezzo, bool fedelta) : base(anno, codice, descrizione, prezzo, fedelta)
 		{
-			Consumazione = Consumazione;
+			Consumazione = consumazione;
 		}
 
 		public ArticoloFresco(ArticoloFresco vartf, ArticoloAlimentare varta, Articolo vart) : base(varta, vart)
@@ -64,6 +64,10 @@ namespace Classe_Articolo
 
 		}
 
+		public override int Compare(Articolo other, Articolo altro)
+		{
+			return base.Compare(other, altro);
+		}
 
 
 	}

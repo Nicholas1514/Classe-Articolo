@@ -31,17 +31,21 @@ namespace Classe_Articolo
 		{
 			Anno = alv.Anno;
 		}
+		public override string ToString()
+		{
+			return base.ToString() + $"Anno: {Anno}";
+		}
 
 		public override double Sconta()
 		{
 			if(Anno == DateTime.Now.Year && Fedelta)
 			{
-				return Prezzo - base.Sconta() * (20 / 100);
+				return Prezzo - base.Sconta() * 20 / 100;
 			}
 
 			if(Anno == DateTime.Now.Year && Fedelta == false)
 			{
-				return Prezzo - Prezzo * (20 / 100);
+				return Prezzo - Prezzo * 20 / 100;
 			}
 			if (Fedelta)
 			{
@@ -49,6 +53,10 @@ namespace Classe_Articolo
 			}
 			return Prezzo;
 		
+		}
+		public override int Compare(Articolo other, Articolo altro)
+		{
+			return base.Compare(other, altro);
 		}
 	}
 }

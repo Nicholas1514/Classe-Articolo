@@ -82,9 +82,14 @@ namespace Classe_Articolo
 		{
 			if(Fedelta)
 			{
-				Prezzo = Prezzo - Prezzo * (5 / 100);
+				Prezzo = Prezzo - Prezzo * 5 / 100;
 			}
 			return Prezzo;
+		}
+
+		public virtual int Compare(Articolo other, Articolo altro)
+		{
+			return 0;
 		}
 	}
 }
