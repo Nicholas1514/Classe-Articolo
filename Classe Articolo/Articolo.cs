@@ -89,7 +89,17 @@ namespace Classe_Articolo
 
 		public virtual int Compare(Articolo other, Articolo altro)
 		{
-			return 0;
+			if(other.Prezzo > altro.Prezzo)
+			{
+				return 1;
+			}
+			if (other.Prezzo < other.Prezzo)
+			{
+				return -1;
+			}
+			
+				return 0;
+			
 		}
 	}
 }
