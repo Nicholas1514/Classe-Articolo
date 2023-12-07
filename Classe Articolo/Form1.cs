@@ -29,7 +29,8 @@ namespace Classe_Articolo
 		private void button1_Click(object sender, EventArgs e)
 		{
 
-			
+
+		
 		
 			
 				art[conta] = new Articolo(int.Parse(textBox1.Text), textBox2.Text, double.Parse(textBox3.Text), checkBox1.Checked);
